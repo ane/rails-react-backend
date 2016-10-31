@@ -58,7 +58,6 @@ class App < Sinatra::Base
     if @a
       @a_new = Artist.new @data
       if @a_new.valid?
-        puts "It's valid, got #{@a_new.to_json}, old is #{@a.to_json}"
         @a.update({ :name => @a_new.name, :instrument => @a_new.instrument, :arsonist => @a_new.arsonist })
         status 204
       else
